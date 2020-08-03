@@ -1,38 +1,47 @@
 import React from 'react';
+import styled from 'styled-components';
 import Button from './Button';
+
+const StyledBtnPanel = styled.div`
+  .row {
+    height: 100px;
+    display: flex;
+    flex-grow: 1;
+  }
+`;
 
 export default function ButtonPanel() {
   return (
-    <div className="ButtonPanelContainer">
-      <div className="firstRow">
+    <StyledBtnPanel>
+      <div className="row">
         <Button name="AC" />
         <Button name="+/-" />
         <Button name="%" />
         <Button name="÷" />
       </div>
-      <div className="secondRow">
+      <div className="row">
         <Button name="7" />
         <Button name="8" />
         <Button name="9" />
         <Button name="X" />
       </div>
-      <div className="thirdRow">
+      <div className="row">
         <Button name="4" />
         <Button name="5" />
         <Button name="6" />
         <Button name="-" />
       </div>
-      <div className="fourthRow">
+      <div className="row">
         <Button name="1" />
         <Button name="2" />
         <Button name="3" />
         <Button name="+" />
       </div>
-      <div className="firthRow">
-        <Button name="0" />
+      <div className="row">
+        <Button name="0" wide />
         <Button name="." />
         <Button name="=" />
       </div>
-    </div>
+    </StyledBtnPanel>
   );
 }

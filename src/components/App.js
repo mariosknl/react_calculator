@@ -1,14 +1,22 @@
 import React from 'react';
+import './App.scss';
+import styled from 'styled-components';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 
-import './App.css';
+const StyledCalc = styled.div`
+  width: 700px;
+  margin: 0 auto;
+  display: "flex";
+  flex-direction: "column";
+  flex-wrap: "wrap";
+`;
 
 export default function App() {
   return (
-    <div className="App">
+    <StyledCalc className="App">
       <Display />
       <ButtonPanel />
-    </div>
+    </StyledCalc>
   );
 }

@@ -1,11 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const StyledDisplayResult = styled.div`
+    background: gray;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    span {
+      font-weight: bold;
+      padding: 2rem;
+      text-align: right;
+      font-size: 2rem;
+      color: white;
+    }
+  `;
 
 export default function Display(props) {
   const { result } = props;
   return (
     <div>
-      {result}
+      <StyledDisplayResult>
+        <span>
+          {result}
+        </span>
+      </StyledDisplayResult>
     </div>
   );
 }
