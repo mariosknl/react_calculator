@@ -12,7 +12,7 @@ Also, I have deployed it on Heroku using buildpack which deploys a React UI as a
 
 - [heroku-link](https://react-calculator-by-mariosknl.herokuapp.com/)
 
-# AUTHORS
+# AUTHOR
 
 👤 Marios Kanellopoulos
 
