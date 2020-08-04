@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const StyledBtn = styled.button`
   width: ${props => (props.wide ? '50%' : '25%')};
-  border: solid 1px #000;
+  border: solid 2px #000;
   background: ${props => props.color};
   p {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 `;
 
