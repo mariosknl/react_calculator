@@ -9,6 +9,7 @@ const StyledBtn = styled.button`
   p {
     font-size: 2.2rem;
   }
+  outline: none;
   &:hover {
     background: linear-gradient(90deg, rgba(117,57,37,1) 0%, rgba(212,95,29,1) 50%, rgba(117,57,37,1) 100%);
     cursor:pointer;
