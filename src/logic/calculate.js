@@ -9,6 +9,8 @@ function calculate(dataObj, btnName) {
     dataObj.next = btnName;
   } else if (btnName === '.' && dataObj.operation === null) {
     dataObj.next += btnName;
+  } else if (btnName === '.' && dataObj.total === null && dataObj.next === null) {
+    return '';
   } else if (nums.includes(btnName) && dataObj.operation === null && dataObj.next) {
     dataObj.next += btnName;
   } else if (operations.includes(btnName)) {
@@ -22,11 +24,19 @@ function calculate(dataObj, btnName) {
   }
 
   if (btnName === '=') {
-    dataObj.total = operate(
-      dataObj.next,
-      dataObj.total,
-      dataObj.operation,
-    );
+    if (!dataObj.total && dataObj.obj.total === null && !dataObj.next && dataObj.obj.next == null) {
+      dataObj.total = null;
+      dataObj.next = null;
+      return '';
+    }
+    if (dataObj.total !== null || dataObj.next !== null) {
+      dataObj.total = operate(
+        dataObj.next,
+        dataObj.total,
+        dataObj.operation,
+      );
+    }
+
     dataObj.operation = '=';
   } else if (btnName === 'AC') {
     dataObj.total = null;

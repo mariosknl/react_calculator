@@ -31,7 +31,7 @@ class App extends Component {
     const obj = this.state;
     const newObj = calculate(obj, btnName);
     this.setState({
-      obj: newObj,
+      obj: { ...newObj },
     });
   }
 
