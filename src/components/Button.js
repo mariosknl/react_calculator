@@ -12,9 +12,16 @@ const StyledBtn = styled.button`
 `;
 
 export default function Button(props) {
-  const { name, color, wide } = props;
+  const {
+    name, color, wide, handleClick,
+  } = props;
   return (
-    <StyledBtn color={color} wide={wide} type="button">
+    <StyledBtn
+      color={color}
+      wide={wide}
+      type="button"
+      onClick={() => handleClick(name)}
+    >
       <p>
         {name}
       </p>
@@ -26,6 +33,7 @@ Button.propTypes = {
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {

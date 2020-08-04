@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.scss';
 import styled from 'styled-components';
 import Display from './Display';
@@ -13,15 +13,37 @@ const StyledCalc = styled.div`
   flex-wrap: "wrap";
 `;
 
-function App() {
-  // eslint-disable-next-line no-unused-vars
-  const { calculate } = calculateDataObj;
-  return (
-    <StyledCalc className="App">
-      <Display />
-      <ButtonPanel />
-    </StyledCalc>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      obj: {
+        total: null,
+        next: null,
+        operation: null,
+      },
+    };
+  }
+
+  handleClick(btnName) {
+    const { calculate } = calculateDataObj;
+    const obj = this.state;
+    const newObj = calculate(obj, btnName);
+    this.setState({
+      obj: newObj,
+    });
+  }
+
+  render() {
+    const { obj } = this.state;
+    return (
+      <StyledCalc className="App">
+        <Display result={obj.total || obj.next || '0'} />
+        <ButtonPanel clickHandler={this.handleClick} />
+      </StyledCalc>
+    );
+  }
 }
 
 export default App;

@@ -3,7 +3,7 @@ import operationFunction from './operate';
 
 function calculate(dataObj, btnName) {
   const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const operations = ['+', '-', '/', '*'];
+  const operations = ['+', '-', '÷', 'X'];
   const { operate } = operationFunction;
   if (nums.includes(btnName) && dataObj.next == null) {
     dataObj.next = btnName;
@@ -22,15 +22,26 @@ function calculate(dataObj, btnName) {
   }
 
   if (btnName === '=') {
-    dataObj.total = operate(dataObj.next, dataObj.total, dataObj.operation);
+    dataObj.total = operate(
+      dataObj.next,
+      dataObj.total,
+      dataObj.operation,
+    );
+    dataObj.operation = '=';
   } else if (btnName === 'AC') {
     dataObj.total = null;
     dataObj.next = null;
     dataObj.operation = null;
   } else if (btnName === '+/-') {
-    if (dataObj.next) dataObj.next += -1;
-    if (dataObj.total) dataObj.total *= -1;
+    if (dataObj.next) {
+      dataObj.total *= -1;
+      dataObj.total = dataObj.total.toString();
+    } else if (!dataObj.total) {
+      dataObj.next *= -1;
+      dataObj.next = dataObj.next.toString();
+    }
   } else if (btnName === '%') {
+    dataObj.operation = btnName;
     dataObj.total = operate(dataObj.next, null, dataObj.operation);
   }
   return dataObj;
