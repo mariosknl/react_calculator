@@ -1,4 +1,4 @@
-# Ruby On Rails Capstone: Twitter Redesign - (Theme: Music Opinions Sharing)
+# React Calculator
 
 This is my calculator app created with ReactJS. Besides the default dependencies I'm using Prop-Types and Big.js packages.
 Also, I have deployed it on Heroku using buildpack which deploys a React UI as a static web site.
