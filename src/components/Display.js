@@ -7,6 +7,7 @@ const StyledDisplayResult = styled.div`
     height: 100px;
     display: flex;
     justify-content: flex-end;
+    border: solid 2px #000;
     span {
       font-weight: bold;
       padding: 2rem;

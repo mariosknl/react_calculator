@@ -3,7 +3,9 @@ import Big from 'big.js';
 function operate(num1, num2, operation) {
   let result = new Big(0);
   const one = new Big(num1);
-  const two = new Big(num2);
+  let two;
+  let temp = false;
+  if (num2) two = new Big(num2);
   switch (operation) {
     case '+':
       result = one.plus(two);
@@ -11,11 +13,12 @@ function operate(num1, num2, operation) {
     case '-':
       result = one.minus(two);
       break;
-    case '*':
+    case 'X':
       result = one.times(two);
       break;
-    case '/':
-      result = one.div(two);
+    case '÷':
+      if (num1 === '0' || num2 === '0') temp = true;
+      result = temp ? 'cant be divided by zero(0)' : one.div(two);
       break;
     case '%':
       result = one.times('0.01');

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const StyledBtnPanel = styled.div`
@@ -10,38 +11,43 @@ const StyledBtnPanel = styled.div`
   }
 `;
 
-export default function ButtonPanel() {
+export default function ButtonPanel(props) {
+  const { clickHandler } = props;
   return (
     <StyledBtnPanel>
       <div className="row">
-        <Button name="AC" />
-        <Button name="+/-" />
-        <Button name="%" />
-        <Button name="÷" />
+        <Button name="AC" handleClick={clickHandler} />
+        <Button name="+/-" handleClick={clickHandler} />
+        <Button name="%" handleClick={clickHandler} />
+        <Button name="÷" handleClick={clickHandler} />
       </div>
       <div className="row">
-        <Button name="7" />
-        <Button name="8" />
-        <Button name="9" />
-        <Button name="X" />
+        <Button name="7" handleClick={clickHandler} />
+        <Button name="8" handleClick={clickHandler} />
+        <Button name="9" handleClick={clickHandler} />
+        <Button name="X" handleClick={clickHandler} />
       </div>
       <div className="row">
-        <Button name="4" />
-        <Button name="5" />
-        <Button name="6" />
-        <Button name="-" />
+        <Button name="4" handleClick={clickHandler} />
+        <Button name="5" handleClick={clickHandler} />
+        <Button name="6" handleClick={clickHandler} />
+        <Button name="-" handleClick={clickHandler} />
       </div>
       <div className="row">
-        <Button name="1" />
-        <Button name="2" />
-        <Button name="3" />
-        <Button name="+" />
+        <Button name="1" handleClick={clickHandler} />
+        <Button name="2" handleClick={clickHandler} />
+        <Button name="3" handleClick={clickHandler} />
+        <Button name="+" handleClick={clickHandler} />
       </div>
       <div className="row">
-        <Button name="0" wide />
-        <Button name="." />
-        <Button name="=" />
+        <Button name="0" wide handleClick={clickHandler} />
+        <Button name="." handleClick={clickHandler} />
+        <Button name="=" handleClick={clickHandler} />
       </div>
     </StyledBtnPanel>
   );
 }
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
