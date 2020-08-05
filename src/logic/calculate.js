@@ -15,6 +15,10 @@ function calculate(dataObj, btnName) {
     dataObj.next += btnName;
   } else if (operations.includes(btnName)) {
     dataObj.operation = btnName;
+    if (dataObj.next && dataObj.total) {
+      dataObj.next = dataObj.total;
+      dataObj.total = null;
+    }
   } else if (dataObj.next && dataObj.operation && nums.includes(btnName) && !dataObj.total) {
     dataObj.total = btnName;
   } else if (btnName === '.' && dataObj.operation) {
@@ -36,7 +40,6 @@ function calculate(dataObj, btnName) {
         dataObj.operation,
       );
     }
-
     dataObj.operation = '=';
   } else if (btnName === 'AC') {
     dataObj.total = null;
