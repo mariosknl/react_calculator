@@ -10,7 +10,7 @@ Also, I have deployed it on Heroku using buildpack which deploys a React UI as a
 
 # LIVE VERSION
 
-- [heroku-link](https://react-calculator-by-mariosknl.herokuapp.com/)
+- [Live Version](https://loving-noyce-3ce53c.netlify.app/)
 
 # AUTHOR
 
