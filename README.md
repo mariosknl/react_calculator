@@ -1,3 +1,5 @@
+[![Renovate Status](https://badges.renovateapi.com/github/mariosknl/react_calculator)](https://renovatebot.com/)
+
 # React Calculator
 
 This is my calculator app created with ReactJS. Besides the default dependencies I'm using Prop-Types and Big.js packages.
