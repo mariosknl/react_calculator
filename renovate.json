@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "timezone": "Asia/Tokyo",
+  "timezone": "Europe/Greece",
   "schedule": ["every weekend"],
   "packageRules": [
         {
